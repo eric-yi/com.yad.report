@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yads>
+	<datasource id="ds" type="jdbc" usepool="true">
+		<driver value="com.mysql.jdbc.Driver" />
+		<url value="jdbc:h2:" />
+		<username value="yad" />
+		<password value="yad" />
+		<connections value="5" />
+	</datasource>
+</yads>

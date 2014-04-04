@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: com.yad.report
+Bundle-Vendor: Eric Yi
+Bundle-Version: 0.1
+Bundle-ManifestVersion: 2
+Bundle-Description: Report Engine

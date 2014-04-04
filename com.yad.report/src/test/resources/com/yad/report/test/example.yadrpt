@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yadrpt>
+	<id>test1</id>
+	<name>用户信息报表</name>
+	<call>common</call>
+	<outpage></outpage>
+	<!-- 参数替换 -->
+	<parameters>
+		<replace handler="com.yad.report.engine.parameter.DateParameterHandler" />
+		<replace name="username" value="%a%" type="string" />
+		<replace name="" value="" />
+	</parameters>
+	
+	<!-- 产生数据集 -->
+	<datasets>
+		<scheduler handler="com.yad.report.test.engine.TestSchedulerHandler" />
+		<dataset name="set1" datasource="ds1" order="1">
+			<parameter index="1" name="username" type="parameter" />
+			<statement><![CDATA[
+select 
+	id, username, department, phone, address, email
+from
+	dms_sys_user
+]]>
+			</statement>
+		</dataset>
+	</datasets>
+	
+	<!-- 数据集转换 -->
+	<transfer>
+		<handler></handler>
+	</transfer>
+	
+	<!-- 渲染 -->
+	<render title="用户信息表" rownum="open">
+		<header type="cross" handler="">
+			<columns>
+				<column index="0" name="ID" />
+				<column index="1" name="用户名" />
+				<column index="2" name="部门" />
+				<column index="3" name="电话" />
+				<column index="4" name="地址" />
+				<column index="5" name="email" />
+				<column index="5" name="其它" />
+			</columns>
+			<rows>
+				<row index="1" name="今天" />
+			</rows>
+		</header>
+		<!-- 数据上的渲染，包括颜色等信息 -->
+		<datas>
+			<handle></handle>
+			<handle></handle>
+		</datas>
+		<!-- 图形 -->
+		<graph type="curve" title="用户信息曲线图" handle="">
+			<x title="时间" element="username" />
+			<y title="信息" element="username" />
+		</graph>
+	</render>
+	
+	<!-- 导出 -->
+	<export>
+		<excel>
+			<template></template>
+			<filename></filename>
+		</excel>
+	</export>
+
+</yadrpt>

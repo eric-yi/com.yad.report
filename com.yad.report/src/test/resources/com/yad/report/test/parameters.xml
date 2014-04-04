@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<parameters>
+	<parameter type="string" name="username" value="root" />
+	<parameter type="date" name="time" value="2010-07-02" />
+</parameters>
